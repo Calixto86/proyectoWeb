@@ -3,6 +3,10 @@
     padding: 0px;
 }
 
+body {
+    background-image: url("D://curso html css//miProyectoWebStatico//imagenes//fondo.png");
+}
+
 #cabeceralogo {
     width: 96%;
     height: 150px;
@@ -36,20 +40,46 @@
 }
 
 #menuprincipal li {
+    position: relative;
     display: inline-block;
     height: 35px;
     padding: 15px 10px 0px 10px;
     margin-right: 5px;
 }
 
-#menuprincipal li:hover {
-    background-color: #6FACC6;
+#menuprincipal li > ul {
+    display: none;     /*propiedad para ocultar un element*/
+    position: absolute;/*por defecto en columnas*/
+    top: 50px;
+    left: 0px;
+
+    background-color: #9FC8D9;
+    box-shadow: 3px 3px 5px rgba(100, 100, 100, 07);
+    border-radius: 0px 0px 5px 5px;
+
+    list-style: none;
+    z-index: 1000;
+}
+
+#menuprincipal li > ul > li {
+    width: 120px;
+    height: 35px;
+    padding-top: 15px;
+    padding-left: 10px;
+}
+
+#menuprincipal li:hover ul {
+    display: block; /*mostramos submenu oculto*/
 }
 
 #menuprincipal a {
     font: bold 18px Arial, sans-serif;
     color: #333333;
     text-decoration: none;
+}
+
+#menuprincipal li:hover {
+    background-color: #6FACC6;
 }
 
 main {
@@ -66,14 +96,15 @@ main > div {
 #articulosprincipales {
     float: left;
     width:  620px;
+    background-color: white;
     padding-top: 30px;
-    background-color: #CCCCCC;
     border-radius: 10px;
 }
 
 #infoadicional {
     float: right;
     width: 280px;
+    height: 920px;
     padding: 20px;
     background-color: #E7F1F5;
     border-radius: 10px;
@@ -105,11 +136,11 @@ article time {
     left: -70px;
     width: 80px;
     padding: 15px 5px;
-    /*3px 3px desplazamiento del sombreado izq abajo
+    background-color: #094660;
+    /*3px 3px desplazamiento del sombreado dere abajo
     5px desenfoque de la sombra
     rgba(r,g,b,opacidad)
     */
-    background-color: #094660;
     box-shadow: 3px 3px 5px rgba(100, 100, 100, 0.7);
     border-radius: 5px;                                 
 }
